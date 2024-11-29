@@ -49,7 +49,6 @@
       <button> CERTIFICATE </button>
     </nav>
     <br>
-
   </head>
 
   <body>
