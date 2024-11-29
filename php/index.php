@@ -38,17 +38,68 @@
 
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Cursos</a></li>
-        <li><a href="#">Historia</a></li>
-        <li><a href="#">Oficinas</a></li>
-        <li><a href="#">Certificados</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li>
+        <button type="button" class="btn btn-secondary menu-btn">
+          Home
+        </button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary menu-btn"
+            data-bs-toggle="popover" data-bs-placement="bottom"
+            data-bs-custom-class="custom-popover"
+            data-bs-title="Cursos"
+            data-bs-content="Todos nuestros cursos disponibles.">
+            Cursos
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary menu-btn"
+            data-bs-toggle="popover" data-bs-placement="bottom"
+            data-bs-custom-class="custom-popover"
+            data-bs-title="Historia"
+            data-bs-content="Un poco de nuestra trayectoria.">
+            Historia
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary menu-btn"
+            data-bs-toggle="popover" data-bs-placement="bottom"
+            data-bs-custom-class="custom-popover"
+            data-bs-title="Oficinas"
+            data-bs-content="Oficinas disponibles">
+            Oficinas
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary menu-btn"
+            data-bs-toggle="popover" data-bs-placement="bottom"
+            data-bs-custom-class="custom-popover"
+            data-bs-title="Certificados"
+            data-bs-content="Genera tu certificado.">
+            Certificados
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary menu-btn"
+            data-bs-toggle="popover" data-bs-placement="bottom"
+            data-bs-custom-class="custom-popover"
+            data-bs-title="Servicios"
+            data-bs-content="Otros servicios generales.">
+            Servicios
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary menu-btn"
+            data-bs-toggle="popover" data-bs-placement="bottom"
+            data-bs-custom-class="custom-popover"
+            data-bs-title="Contacto"
+            data-bs-content="Toda nuestra informacion de contacto, correo, tel, etc.">
+            Contacto
+          </button>
+        </li>
       </ul>
       <button> CERTIFICATE </button>
     </nav>
-    <br>
   </head>
 
   <body>
@@ -65,6 +116,7 @@
         <h2>Bienvenido a Educaduca</h2>
         <h1>Aprende con los mejores expertos</h1>
         <p>Certifícate en AWS, AZURE.</p>
+        <br>
         <div class="buttons">
           <a href="#" class="btn-primary">COMENZAR AHORA!</a>
           <a href="#" class="btn-secondary">VER CURSO ONLINE GRATUITO - > </a>
@@ -72,6 +124,8 @@
       </div>
     </main>
     <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
