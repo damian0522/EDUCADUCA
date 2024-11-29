@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: #9ccad3;
+    background-image: url('../img/fondo_pagina_sin_fondo.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: right -30px top 200px;
+}
+
+
+
+/* El contenedor del fondo */
+.background {
+  position: fixed; /* Para que permanezca siempre en el fondo */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Abarca todo el ancho de la ventana */
+  height: 100vh; /* Abarca todo el alto de la ventana */
+  z-index: -1; /* Envía el fondo detrás del contenido */
+  overflow: hidden; /* Evita que la imagen desborde */
+}
+
+/* La imagen dentro del fondo */
+.background img {
+  width: 100%; /* Ocupa todo el ancho del div */
+  height: 100%; /* Ocupa todo el alto del div */
+  object-fit: cover; /* Escala y recorta para cubrir sin distorsión */
+}
+
+.head {
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.buttons-social {
+  display: flex; /* Utiliza flexbox para alinear los botones en línea */
+  justify-content: center; /* Centra los botones en el contenedor */
+  gap: 10px; /* Añade un espacio entre los botones */
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 20px; /* Tamaño del texto o ícono */
+  border: none; /* Sin bordes */
+  border-radius: 50%; /* Hacerlo redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  background-color: rgba(84, 247, 206, 0.0); /* Fondo semitransparente */
+  cursor: pointer; /* Manito en el cursor */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+.social-btn:hover {
+  background-color: #48d6b3; /* Cambio de color al pasar */
+  transform: scale(1.1); /* Efecto de zoom */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: center;
+  background-color: rgba(84, 247, 206, 0.0); /* Fondo semitransparente */
+  padding: 10px 200px; /* Espaciado */
+  margin-left: 250px;
+  margin-right: 250px;
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px; /* Espaciado entre enlaces */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff; /* Texto blanco */
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo al pasar el cursor */
+}
+
+nav button {
+  background-color: #9ccad3;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-group-vertical {
+  background-color: rgba(0, 0, 0, 0.0); /* Fondo transparente */
+  color: white; /* Texto blanco */
+  padding: 20px; /* Espaciado interno */
+  width: 110px; /* Ancho fijo */
+  position: fixed; /* Fijar el aside en su lugar */
+  right: 0; /* Alineado a la derecha */
+  top: 400px; /* Distancia desde la parte superior */
+  z-index: 1000; /* Asegura que quede encima de otros elementos */
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px; /* Espaciado entre los botones */
+  padding: 10px;
+  border: none;
+  background-color: #007bff; /* Color del botón */
+  color: white;
+  transition: transform 0.3s ease, padding-left 0.3s ease; /* Transición suave */
+}
+
+.btn:hover {
+  transform: translateX(-10px); /* Desplazamiento a la izquierda */
+  padding-left: 20px; /* Ampliar el espacio del botón cuando hace hover */
+}
+
+.btn::after {
+  content: attr(data-tooltip); /* Mostrar el texto del tooltip */
+  position: absolute;
+  left: -150px; /* Mostrar el texto a la izquierda */
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%); /* Centrado preciso */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro del tooltip */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  visibility: hidden; /* Inicialmente invisible */
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover::after {
+  visibility: visible; /* Mostrar el texto cuando hace hover */
+  opacity: 1; /* Hacerlo visible */
+}
+
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.0); /* Fondo blanco con transparencia */
+  padding: 20px;
+  text-align: center; /* Centrar texto */
+  max-width: 600px; /* Ancho máximo */
+  margin-top: 270px;
+  margin-left: 200px;
+}
+
+.content h2 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.content h1 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.buttons a {
+  text-decoration: none;
+  padding: 25px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #5bc7be;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.btn-secondary {
+  background: #fff;
+  border: 2px solid #5bc7be;
+  color: #5bc7be;
+}
+
+.image img {
+  max-width: 40%;
+  border-radius: 10px;
+}
+
+
+/* Ajustes para dispositivos muy pequeños (teléfonos) */
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .content h1 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .buttons a {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
