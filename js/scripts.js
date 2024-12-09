@@ -1,3 +1,4 @@
+//Logica para funcionalidad de los bototes de ayuda
 let tamanoLetra = 1; // Factor inicial de tamaño de letra
 const tamanoLetraMax = 4; // Tamaño máximo permitido
 const tamanoLetraMin = 0.25; // Tamaño mínimo permitido
@@ -64,4 +65,11 @@ window.onload = function () {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Educaduca está listo.');
   });
-  
+
+// Hover para botones del menu
+document.addEventListener('DOMContentLoaded', function () {
+  const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+  const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl);
+  });
+});
