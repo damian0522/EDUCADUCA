@@ -121,7 +121,9 @@
         <br>
         <div class="buttons">
           <button id="btn-register" class="btn-primary">COMENZAR AHORA!</button>
-          <button class="btn-secondary">VER CURSO ONLINE GRATUITO - > </button>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+            <button class="btn-secondary">VER CURSO ONLINE GRATUITO - > </button>
+        </a> 
         </div>
       </div>
     </main>
