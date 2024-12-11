@@ -3,6 +3,87 @@ let tamanoLetra = 1; // Factor inicial de tamaño de letra
 const tamanoLetraMax = 4; // Tamaño máximo permitido
 const tamanoLetraMin = 0.25; // Tamaño mínimo permitido
 
+// Logica para cuando haga click salga formulario
+document.getElementById("btn-register").addEventListener("click", function () {
+  document.getElementById("register-container").style.display = "block";
+});
+
+// Logica para cuando de click en la X cierre el formulario
+document.getElementById("close-form-btn").addEventListener("click", function () {
+  document.getElementById("register-container").style.display = "none";
+});
+
+// Logica para que cuando haya registro exitoso me envie alerta y se refresque la pantalla
+document.getElementById("register-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita la recarga de la página
+
+  const formData = new FormData(this);
+
+  fetch("db/register_users.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const alertBox = document.getElementById("alert-box");
+      if (data.success) {
+        alertBox.textContent = data.message;
+        alertBox.style.backgroundColor = "green";
+        document.getElementById("register-container").style.display = "none"; // Oculta el formulario tras el éxito
+        // Refresca la pantalla tras un breve tiempo
+        setTimeout(() => location.reload(), 3000);
+      } else {
+        alertBox.textContent = data.message;
+        alertBox.style.backgroundColor = "red";
+      }
+      alertBox.style.display = "block"; // Muestra la alerta
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
+
+// Logica para cuando haga click salga formulario
+document.getElementById("btn-login").addEventListener("click", function () {
+  document.getElementById("login-container").style.display = "block";
+});
+
+// Logica para cuando de click en la X cierre el formulario
+document.getElementById("close-login-btn").addEventListener("click", function () {
+  document.getElementById("login-container").style.display = "none";
+});
+
+//Logica para logearse
+document.getElementById("login-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita la recarga de la página
+
+  const formData = new FormData(this);
+
+  fetch("db/login_users.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const alertBox = document.getElementById("alert-box");
+      if (data.success) {
+        alertBox.textContent = data.message;
+        alertBox.style.backgroundColor = "green";
+        document.getElementById("login-container").style.display = "none";
+        // Refresca la pantalla tras un breve tiempo
+        setTimeout(() => location.reload(), 3000);
+      } else {
+        alertBox.textContent = data.message;
+        alertBox.style.backgroundColor = "red";
+      }
+      alertBox.style.display = "block"; // Muestra la alerta
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
+
+
 // Función para cambiar el tamaño de la letra
 function cambiarTamanoLetra(direccion) {
   // Calculamos el nuevo tamaño de letra
